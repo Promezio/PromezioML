@@ -25,8 +25,11 @@ from keras.datasets import mnist
 
 
 class MNIST_CNN:
+    ''' MNIST image dataset classificator with Keras & Theano '''
 
     def __init__(self):
+        ''' Prepare data for the model '''
+        
         # Load Data
         print('Date preprocessing . . .')
         (self.X_train, self.y_train), (self.X_test, self.y_test) = mnist.load_data()
@@ -49,6 +52,8 @@ class MNIST_CNN:
 
 
     def fitModel(self):
+        ''' Model definition and training '''
+        
         ## Setup the sequential model
         self.model = Sequential()
 
@@ -74,12 +79,14 @@ class MNIST_CNN:
         self.model.save('MNIST_CNN.h5')
 
     def loadModel(self, model_file):
-        # Load model and weights from file
+        ''' Load model and weights from file '''
+        
         print('Load model from file: {}'.format(model_file))
         self.model = load_model(model_file)
 
     def evaluate(self):
-        # Evaluate the model accuracy with a test set
+        ''' Evaluate the model accuracy with a test set '''
+        
         print('Evaluate test set images')
         score = self.model.evaluate(self.X_test, self.Y_test, verbose=0)
         print('Test loss:', score[0])
