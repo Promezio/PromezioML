@@ -1,24 +1,20 @@
+# Set theano as backend
 import os
 os.environ['KERAS_BACKEND'] = 'theano'
 from keras import backend as K
 K.set_image_dim_ordering('th')
 
 
-import keras
 
 import numpy as np
 np.random.seed(123)  # for reproducibility
 
-# Import Keras model
+# Import Keras libs
+import keras
 from keras.models import Sequential, load_model
-# Import Keras core layers
 from keras.layers import Dense, Dropout, Activation, Flatten
-# Import Keras CNN layers
 from keras.layers import Conv2D, MaxPooling2D
-# Import Keras utils
 from keras.utils import np_utils
-
-#####################################################################
 
 # Import Dataset
 from keras.datasets import mnist
