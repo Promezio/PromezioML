@@ -1,2 +1,2 @@
-# PromezioML
-Machine learning tests by :#/ promezio.it
+# :#/ ML Snippets
+Machine learning tests 
